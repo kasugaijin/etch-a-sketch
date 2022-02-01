@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    font-family: Exo;
+    background: linear-gradient(#f3f1f1, #b8b5b5);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form p {
+    margin: 0;
+    padding: 0;
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #c7c360 0%,
+    #9fd1ac 29%,
+    #db4879 67%,
+    #c7c360 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 8s linear infinite;
+  display: inline-block;
+      font-size: 35px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+#intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-number {
+    width: 25px;
+    border: 2px solid rgb(71, 69, 69);
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+
+.user-submit {
+    padding: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    background-color: cornsilk;
+    border-radius: 4px;
+    font-family: exo;
+    border: 2px solid rgb(71, 69, 69);
+    cursor: pointer;
+ }
+
+ #copy-input {
+     margin-right: 10px;
+ }
+
+#prompt {
+    font-size: 14px;
+    color: rgb(228, 72, 72);
+}
+
+button {
+    padding: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    background-color: cornsilk;
+    border-radius: 4px;
+    font-family: exo;
+    border: 2px solid rgb(71, 69, 69);
+    cursor: pointer;
+}
+
+#button-container {
+    margin-bottom: 10px;
+}
+
+.canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 15px solid rgb(150, 142, 142);
+    border-radius: 14px;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+}
+
+.column {
+    border: 1px solid rgb(243, 239, 239);
+    flex: 1;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-family: monospace;
+    font-size: 13px;
+    margin-top: auto;
+}
