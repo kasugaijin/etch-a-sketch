@@ -3,8 +3,6 @@ let userValue = document.getElementById('user-number');
 let userSubmit = document.getElementById('user-submit');
 let promptText = document.getElementById('prompt');
 let copyInput = document.getElementById('copy-input');
-let rows = document.querySelectorAll('.row');
-let columns = document.querySelectorAll('.column');
 
 userValue.addEventListener('focus', entryHint)
 userValue.addEventListener('keyup', duplicateGrid)
@@ -59,10 +57,26 @@ function makeGrid() {
     }
 }
 }
+//adds event listener to all divs with class "column"
+//added inside makeGrid to allow for drawing after making custom grid
+let columns = document.getElementsByClassName("column");
+for (let i = 0; i < columns.length; i++) {
+    columns[i].addEventListener("mouseover", changeColor);
+}
+function changeColor() {
+    this.className = "column-black"
+}
 }
 
-
-
+//adds event listener to all divs with class "column"
+//added in global scope to allow drawing on page load
+let columns = document.getElementsByClassName("column");
+for (let i = 0; i < columns.length; i++) {
+    columns[i].addEventListener("mouseover", changeColor);
+}
+function changeColor() {
+    this.className = "column-black"
+}
 
 
 

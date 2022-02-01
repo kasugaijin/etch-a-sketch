@@ -134,6 +134,12 @@ button {
     flex: 1;
 }
 
+.column-black {
+    border: 1px solid rgb(26, 25, 25);
+    background-color: rgb(46, 43, 43);
+    flex: 1;
+}
+
 #footer {
     display: flex;
     align-items: center;
