@@ -57,6 +57,7 @@ function makeGrid() {
     }
 }
 }
+//**ADD FUNCTION INSTEAD OF BELOW */
 //adds event listener to all divs with class "column"
 //added inside makeGrid to allow for drawing after making custom grid
 let columns = document.getElementsByClassName("column");
@@ -68,6 +69,7 @@ function changeColor() {
 }
 }
 
+//**can you just turn this all into a function and execute in makeGrid and in global? this will remove all the lines bar 1 in mekGrid */
 //adds event listener to all divs with class "column"
 //added in global scope to allow drawing on page load
 let columns = document.getElementsByClassName("column");
@@ -75,7 +77,20 @@ for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener("mouseover", changeColor);
 }
 function changeColor() {
-    this.className = "column-black"
+    let blackRadio = document.getElementById('black-pen');
+    let redRadio = document.getElementById('red-pen');
+    let blueRadio = document.getElementById('blue-pen');
+    let eraserRadio = document.getElementById('eraser'); 
+    
+    if (blackRadio.checked) {
+        this.className = "column-black"
+    } else if (redRadio.checked) {
+        this.className = "column-red"
+    } else if (blueRadio.checked) {
+        this.className = "column-blue"
+    } else if (eraserRadio.checked) {
+        this.className = "column"
+    }
 }
 
 
