@@ -9,23 +9,23 @@ let columns = document.querySelectorAll('.column');
 userValue.addEventListener('focus', entryHint)
 userValue.addEventListener('keyup', duplicateGrid)
 userSubmit.addEventListener('click', makeGrid);
-rows.addEventListener('mouseover', draw);
-columns.addEventListener('mouseover', draw);
 
-function draw() {
-  rows.style.color = "orange";
-  columns.syle.color = "orange";
-}
+//Run make grid function on page load to make default 10x10 grid
+makeGrid();
 
+//Indicates to user it's a square grid Y x Y
 function duplicateGrid() {
     let userGrid = userValue.value;
     copyInput.textContent = "x " + userGrid;
 }
 
+//Save space and clutter on page with appear/disappearing user instructions for grid size
 function entryHint() {
     promptText.textContent = "Enter a number between 2 and 99." 
 }
 
+//Makes nested divs that are organized into a grid using CSS flexbox. 
+//Invalid entries get warning, default grid is 10x10, else it is user defined.
 function makeGrid() {
     let number = userValue.value;
     if(number < 0 || number > 99 || isNaN(number)) {
@@ -61,7 +61,7 @@ function makeGrid() {
 }
 }
 
-makeGrid();
+
 
 
 
