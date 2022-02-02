@@ -3,13 +3,16 @@ let userValue = document.getElementById('user-number');
 let userSubmit = document.getElementById('user-submit');
 let promptText = document.getElementById('prompt');
 let copyInput = document.getElementById('copy-input');
+let clearButton = document.getElementById('clear-button');
 
-userValue.addEventListener('focus', entryHint)
-userValue.addEventListener('keyup', duplicateGrid)
+userValue.addEventListener('focus', entryHint);
+userValue.addEventListener('keyup', duplicateGrid);
 userSubmit.addEventListener('click', makeGrid);
+clearButton.addEventListener('click', clearGrid);
 
-//Run make grid function on page load to make default 10x10 grid
+//Run makeGrid and draw functions on page load to make default 10x10 grid that is drawable
 makeGrid();
+draw();
 
 //Indicates to user it's a square grid Y x Y
 function duplicateGrid() {
@@ -19,11 +22,11 @@ function duplicateGrid() {
 
 //Save space and clutter on page with appear/disappearing user instructions for grid size
 function entryHint() {
-    promptText.textContent = "Enter a number between 2 and 99." 
+    promptText.textContent = "Enter a number between 2 and 99."; 
 }
 
 //Makes nested divs that are organized into a grid using CSS flexbox. 
-//Invalid entries get warning, default grid is 10x10, else it is user defined.
+//Invalid entries get warning, default grid is 10x10, else it is user a defined resolution.
 function makeGrid() {
     let number = userValue.value;
     if(number < 0 || number > 99 || isNaN(number)) {
@@ -57,25 +60,18 @@ function makeGrid() {
     }
 }
 }
-//**ADD FUNCTION INSTEAD OF BELOW */
-//adds event listener to all divs with class "column"
-//added inside makeGrid to allow for drawing after making custom grid
-let columns = document.getElementsByClassName("column");
-for (let i = 0; i < columns.length; i++) {
-    columns[i].addEventListener("mouseover", changeColor);
-}
-function changeColor() {
-    this.className = "column-black"
-}
+//call draw function here to allow drawing after new grid is made
+draw();
 }
 
-//**can you just turn this all into a function and execute in makeGrid and in global? this will remove all the lines bar 1 in mekGrid */
 //adds event listener to all divs with class "column"
 //added in global scope to allow drawing on page load
+//this refers to the element triggering the mouseover event listener
+function draw() {
 let columns = document.getElementsByClassName("column");
 for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener("mouseover", changeColor);
-}
+    }
 function changeColor() {
     let blackRadio = document.getElementById('black-pen');
     let redRadio = document.getElementById('red-pen');
@@ -92,6 +88,25 @@ function changeColor() {
         this.className = "column"
     }
 }
+}
+
+//eraser function finds all divs with altered classes and resets them to default
+function clearGrid() {
+    let blackColumns = document.getElementsByClassName("column-black");
+    for (let i = 0; i < blackColumns.length; i++) {
+        blackColumns[i].className = "column";
+        }
+    let redColumns = document.getElementsByClassName("column-red");
+    for (let i = 0; i < redColumns.length; i++) {
+        redColumns[i].className = "column";
+        }
+    let blueColumns = document.getElementsByClassName("column-blue");
+    for (let i = 0; i < blueColumns.length; i++) {
+        blueColumns[i].className = "column";
+        }
+    }
+
+
 
 
 
