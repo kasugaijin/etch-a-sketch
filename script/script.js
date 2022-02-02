@@ -94,34 +94,10 @@ function changeColor() {
 }
 }
 
-//eraser function finds all divs with altered classes and resets them to default
+//eraser function loops through all column divs and sets background to "" in DOM
 function clearGrid() {
     let columns = document.getElementsByClassName("column");
     for (let i = 0; i < columns.length; i++) {
         columns[i].style.backgroundColor = '';
     }
     }
-
-
-
-
-
-//function makeGrid(number) {
-    //if (number == 0) {
-        //nested if for a 
-  //  }
-//}
-
-//let eraser = document.getElementById('xxx');
-//let clearAll = document.getElementById('xxx');
-
-//nested for loop i = user input, 
-//for loop to create row div, add class row, append to container
-//nested for loop to create column div, add class column, append to row div.
-//if user input = "" then default grid of 10 x 10, else user input grid size
-//eraser - hover over clear colour
-//clear button, clear all divs of all colour
-//colour select
-//shading
-//have red text appear under value field to prompt "1-99"
-//on click submit, set user prompt to "" and clear form and make prompt if they enter "" and hit submit
