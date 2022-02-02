@@ -76,34 +76,30 @@ function changeColor() {
     let blackRadio = document.getElementById('black-pen');
     let redRadio = document.getElementById('red-pen');
     let blueRadio = document.getElementById('blue-pen');
+    let rainbow = document.getElementById('rainbow');
     let eraserRadio = document.getElementById('eraser'); 
     
     if (blackRadio.checked) {
-        this.className = "column-black"
+        this.style.backgroundColor = '#2e2b2b';
     } else if (redRadio.checked) {
-        this.className = "column-red"
+        this.style.backgroundColor = '#da2d2d'
     } else if (blueRadio.checked) {
-        this.className = "column-blue"
+        this.style.backgroundColor = "#3f33dd"
     } else if (eraserRadio.checked) {
-        this.className = "column"
+        this.style.backgroundColor = ''
+    } else if (rainbow.checked) {
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        this.style.backgroundColor = "#" + randomColor;
     }
 }
 }
 
 //eraser function finds all divs with altered classes and resets them to default
 function clearGrid() {
-    let blackColumns = document.getElementsByClassName("column-black");
-    for (let i = 0; i < blackColumns.length; i++) {
-        blackColumns[i].className = "column";
-        }
-    let redColumns = document.getElementsByClassName("column-red");
-    for (let i = 0; i < redColumns.length; i++) {
-        redColumns[i].className = "column";
-        }
-    let blueColumns = document.getElementsByClassName("column-blue");
-    for (let i = 0; i < blueColumns.length; i++) {
-        blueColumns[i].className = "column";
-        }
+    let columns = document.getElementsByClassName("column");
+    for (let i = 0; i < columns.length; i++) {
+        columns[i].style.backgroundColor = '';
+    }
     }
 
 
