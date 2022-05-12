@@ -68,10 +68,11 @@ draw();
 //added in global scope to allow drawing on page load
 //this refers to the element triggering the mouseover event listener
 function draw() {
-let columns = document.getElementsByClassName("column");
-for (let i = 0; i < columns.length; i++) {
-    columns[i].addEventListener("mouseover", changeColor);
-    }
+    let columns = document.getElementsByClassName("column");
+    for (let i = 0; i < columns.length; i++) {
+        columns[i].addEventListener("mouseover", changeColor);
+        }
+
 function changeColor() {
     let blackRadio = document.getElementById('black-pen');
     let redRadio = document.getElementById('red-pen');
